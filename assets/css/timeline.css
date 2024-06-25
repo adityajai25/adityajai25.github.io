@@ -1,0 +1,53 @@
+.timeline {
+    position: relative;
+    max-width: auto;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .content {
+    text-align: right;
+}
+.timeline-item .content {
+    flex: 1;
+}
+.timeline-item .job-title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.timeline-item .date {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.timeline-item .company {
+    font-style: normal;
+}
+
+/* Animation for scrolling */
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+.scroll-wrapper {
+    
+    height: 300px; /* Adjust height as needed */
+    position: relative;
+}
+.scroll-content {
+    scroll-behavior: smooth;
+    position: absolute;
+    width: auto;
+}
