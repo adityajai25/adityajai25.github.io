@@ -36,6 +36,11 @@
     font-style: normal;
 }
 
+.timeline #last{
+    border-bottom: none;
+    margin: 0px;
+}
+
 /* Animation for scrolling */
 @keyframes scroll {
     0% { transform: translateY(0); }
