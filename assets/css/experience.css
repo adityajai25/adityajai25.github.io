@@ -56,7 +56,11 @@
     border-radius: 50%;
     z-index: 1;
 }
-
+.description {
+    font-size: 0.9rem;
+    color: #f3f2f2;
+    margin-top: 10px;
+}
 /* Dot position */
 .timeline-item.left::before {
     right: -7px;
