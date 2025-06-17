@@ -1,0 +1,108 @@
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Vertical center line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #4a90e2;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Timeline item base */
+.timeline-item {
+    padding: 20px 20px;
+    position: relative;
+    width: 50%;
+}
+
+/* Left items */
+.timeline-item.left {
+    left: 0;
+}
+
+/* Right items */
+.timeline-item.right {
+    left: 50%;
+}
+
+/* Common card content */
+.timeline-item .content {
+
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(63, 63, 63, 0.766);
+    position: relative;
+}
+
+/* Dot on the line */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border: 3px solid #4a90e2;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Dot position */
+.timeline-item.left::before {
+    right: -7px;
+}
+
+.timeline-item.right::before {
+    left: -7px;
+}
+
+/* Typography */
+.job-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.company,
+.date,
+.location {
+    font-size: 0.9rem;
+    color: #cfcdcd;
+}
+
+.location i {
+    color: #969696;
+    margin-right: 5px;
+}
+
+/* Responsive (stack vertically) */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 10px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 25px;
+    }
+
+    .timeline-item.right,
+    .timeline-item.left {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 0;
+    }
+}
