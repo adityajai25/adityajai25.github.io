@@ -46,7 +46,7 @@
           </div>
           <div class="author-content">
             <h4>ADITYA J P</h4>
-            <p><strong></strong>Automation Engineer</p>
+            <p><strong></strong>Solution Developer</p>
             <!-- <br>
               
               <a
@@ -275,16 +275,25 @@
               <label><input type="radio" data-type="others" name="isotope-filter" />
                 <span>Others</span>
               </label>
-              <!-- <label
-                  ><input
-                    type="radio"
-                    data-type="others"
-                    name="isotope-filter"
-                  />
-                  <span>Others</span>
-                </label> -->
             </form>
             <div class="isotope-box" id="initial-projects">
+
+              <!-- Invent Institute Website-->
+              <div class="isotope-item" data-type="web-dev">
+                <figure class="snip1321">
+                  <img src="assets/images/web-04.png" alt="sq-sample26" />
+                  <figcaption>
+                    <h4>Invent Institute Website</h4>
+                    <span>Developed website for Invent Institute, a
+                      educational institution. The site features a modern design, 
+                      responsive layout, and seamless user experience across devices, showcasing 
+                      expertise in web development.</span>
+                    <a href="https://github.com/rishithayanidhi/IMS_Web" target="_blank"><button
+                        class="code-button">View Code</button></a>
+                    <a href="http://inventiims.in/" target="_blank"><button class="code-button">View Website</button></a>
+                  </figcaption>
+                </figure>
+              </div>
 
               <!-- Quick Chat -->
               <div class="isotope-item" data-type="web-dev">
@@ -304,6 +313,7 @@
                   </figcaption>
                 </figure>
               </div>
+
               <!-- Driver Drowsiness Detection -->
               <div class="isotope-item" data-type="ml">
                 <figure class="snip1321">
@@ -450,9 +460,11 @@
               <p class="location"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</p>
               <p class="date">January 2025 – Present</p>
               <span class="description">
-                Part of the Automation Testing team, focusing on 3DEXPERIENCE ENOVIA using Eggplant Functional and DAI. Responsible for scripting automated test cases, validating system workflows, and ensuring software quality.
+                Part of the Automation Testing team, focusing on 3DEXPERIENCE ENOVIA using Eggplant Functional and DAI.
+                Responsible for scripting automated test cases, validating system workflows, and ensuring software
+                quality.
               </span>
-              
+
             </div>
           </div>
 
@@ -461,10 +473,12 @@
             <div class="content">
               <h3 class="job-title">Data Science Virtual Intern</h3>
               <p class="company">LetsGrowMore</p>
-               <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
+              <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
               <p class="date">April 2023 – May 2023</p>
               <span class="description">
-                Completed a virtual internship focused on data science, involving hands-on projects in data analysis, machine learning, and data visualization. Gained practical experience in Python, Pandas, and data manipulation techniques.
+                Completed a virtual internship focused on data science, involving hands-on projects in data analysis,
+                machine learning, and data visualization. Gained practical experience in Python, Pandas, and data
+                manipulation techniques.
             </div>
           </div>
 
@@ -554,60 +568,6 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/lightbox.js"></script>
   <script src="assets/js/custom.js"></script>
-  <script>
-    //according to loftblog tut
-    $(".main-menu li:first").addClass("active");
-
-    var showSection = function showSection(section, isAnimate) {
-      var direction = section.replace(/#/, ""),
-        reqSection = $(".section").filter(
-          '[data-section="' + direction + '"]'
-        ),
-        reqSectionPos = reqSection.offset().top - 0;
-
-      if (isAnimate) {
-        $("body, html").animate(
-          {
-            scrollTop: reqSectionPos,
-          },
-          800
-        );
-      } else {
-        $("body, html").scrollTop(reqSectionPos);
-      }
-    };
-
-    var checkSection = function checkSection() {
-      $(".section").each(function () {
-        var $this = $(this),
-          topEdge = $this.offset().top - 80,
-          bottomEdge = topEdge + $this.height(),
-          wScroll = $(window).scrollTop();
-        if (topEdge < wScroll && bottomEdge > wScroll) {
-          var currentId = $this.data("section"),
-            reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-          reqLink
-            .closest("li")
-            .addClass("active")
-            .siblings()
-            .removeClass("active");
-        }
-      });
-    };
-
-    $(".main-menu").on("click", "a", function (e) {
-      e.preventDefault();
-      showSection($(this).attr("href"), true);
-    });
-
-    $(window).scroll(function () {
-      checkSection();
-    });
-
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-  </script>
 </body>
 
 </html>

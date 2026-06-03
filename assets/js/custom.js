@@ -74,3 +74,73 @@
     wrapAround: true
   });
 })(jQuery);
+
+(function($) {
+  // according to loftblog tut
+  $(".main-menu li:first").addClass("active");
+
+  var showSection = function showSection(section, isAnimate) {
+    var direction = section.replace(/#/, ""),
+      reqSection = $(".section").filter(
+        '[data-section="' + direction + '"]'
+      ),
+      reqSectionPos = reqSection.offset().top - 0;
+
+    if (isAnimate) {
+      $("body, html").animate(
+        {
+          scrollTop: reqSectionPos,
+        },
+        800
+      );
+    } else {
+      $("body, html").scrollTop(reqSectionPos);
+    }
+  };
+
+  var checkSection = function checkSection() {
+    var wScroll = $(window).scrollTop(),
+      windowHeight = $(window).height(),
+      documentHeight = $(document).height(),
+      isAtPageBottom = wScroll + windowHeight >= documentHeight - 5;
+
+    if (isAtPageBottom) {
+      var lastSectionId = $(".section").last().data("section"),
+        lastLink = $("a").filter("[href*=\\#" + lastSectionId + "]");
+      lastLink
+        .closest("li")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+      return;
+    }
+
+    $(".section").each(function() {
+      var $this = $(this),
+        topEdge = $this.offset().top - 80,
+        bottomEdge = topEdge + $this.height();
+      if (topEdge < wScroll && bottomEdge > wScroll) {
+        var currentId = $this.data("section"),
+          reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+        reqLink
+          .closest("li")
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+      }
+    });
+  };
+
+  $(".main-menu").on("click", "a", function(e) {
+    e.preventDefault();
+    showSection($(this).attr("href"), true);
+  });
+
+  $(window).scroll(function() {
+    checkSection();
+  });
+
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+})(jQuery);
